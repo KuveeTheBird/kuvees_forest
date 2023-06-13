@@ -10,7 +10,12 @@ def clear_terminal():
         os.system('cls')
 
 
-def slow_typing(message, typing_speed=0.15):
+def slow_typing(message, typing_speed=None):
+    if typing_speed is None:
+        typing_speed = 0.15
+
     for letter in message:
         print(letter, end='')
         sleep(random() * typing_speed)
+
+    print('')
